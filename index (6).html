@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drumcastle Apartments | Baltimore, MD 21212</title>
+<meta name="description" content="Drumcastle Apartments is located in Baltimore, MD 21212. Spacious 2-bedroom apartment homes with flowing layouts, modern appliances, and large closets. Pet-friendly community managed by Signature Properties.">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --charcoal:    #1E1E1E;
+    --charcoal-mid:#2E2E2E;
+    --charcoal-deep:#111111;
+    --burgundy:    #9D2332;
+    --burgundy-light:#B84557;
+    --burgundy-pale:#F2E8EB;
+    --stone:       #F2EDE8;
+    --stone-mid:   #E4DDD6;
+    --warm-gray:   #8A7E7E;
+    --body:        #4A4040;
+    --white:       #FFFFFF;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--stone); color: var(--charcoal); overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 3rem; display: flex; align-items: center; justify-content: space-between; transition: background 0.3s ease, padding 0.3s ease; }
+  nav.scrolled { background: var(--charcoal); padding: 0.9rem 3rem; }
+  .nav-logo img { height: 52px; display: block; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; font-weight: 500; }
+  .nav-links a:hover { color: var(--burgundy-light); }
+  .nav-actions { display: flex; gap: 0.75rem; }
+  .btn-nav { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.55rem 1.25rem; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 500; border: none; transition: all 0.2s; text-decoration: none; display: inline-block; }
+  .btn-ghost { background: transparent; color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.25); }
+  .btn-ghost:hover { border-color: var(--burgundy-light); color: var(--burgundy-light); }
+  .btn-burg { background: var(--burgundy); color: var(--white); }
+  .btn-burg:hover { background: var(--burgundy-light); }
+
+  /* PROMO */
+  .promo-bar { background: var(--burgundy); padding: 0.65rem 3rem; padding-top: 4.75rem; display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+  .promo-text { font-size: 0.82rem; font-weight: 500; color: var(--white); letter-spacing: 0.04em; }
+  .promo-cta { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 1px; text-decoration: none; white-space: nowrap; transition: color 0.2s; }
+  .promo-cta:hover { color: var(--white); }
+
+  /* HERO */
+  .hero { min-height: 100vh; position: relative; overflow: hidden; background: var(--charcoal); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 7rem 3rem 5rem; }
+  .hero-bg { position: absolute; inset: 0; }
+  .hero-bg img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.35; }
+  .hero-bg-gradient { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(157,35,50,0.1) 0%, transparent 70%); }
+  .hero-rule-top { width: 1px; height: 4rem; background: rgba(255,255,255,0.15); margin: 0 auto 2rem; position: relative; z-index: 1; }
+  .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--burgundy-light); margin-bottom: 1.5rem; position: relative; z-index: 1; }
+  .hero-name { font-family: 'Libre Baskerville', serif; font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 700; line-height: 1; color: var(--white); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem; position: relative; z-index: 1; }
+  .hero-name .dot { color: var(--burgundy); display: inline-block; transform: scale(0.6); }
+  .hero-sub-name { font-family: 'Libre Baskerville', serif; font-size: clamp(1rem, 2.5vw, 1.8rem); font-weight: 400; font-style: italic; color: rgba(255,255,255,0.4); margin-bottom: 2.5rem; letter-spacing: 0.1em; position: relative; z-index: 1; }
+  .hero-rule-h { width: 5rem; height: 1px; background: var(--burgundy); margin: 0 auto 2rem; position: relative; z-index: 1; }
+  .hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.5); line-height: 1.85; max-width: 520px; margin: 0 auto 3rem; font-weight: 300; position: relative; z-index: 1; }
+  .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+  .btn-primary { background: var(--burgundy); color: var(--white); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 2rem; border: none; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 500; transition: background 0.2s; text-decoration: none; display: inline-block; }
+  .btn-primary:hover { background: var(--burgundy-light); }
+  .btn-outline-lt { background: transparent; color: rgba(255,255,255,0.7); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 2rem; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; font-family: 'Inter', sans-serif; transition: border-color 0.2s, color 0.2s; text-decoration: none; display: inline-block; }
+  .btn-outline-lt:hover { border-color: var(--burgundy-light); color: var(--burgundy-light); }
+  .hero-rule-bot { width: 1px; height: 4rem; background: rgba(255,255,255,0.12); margin: 3rem auto 0; position: relative; z-index: 1; }
+
+  /* STATS */
+  .stats { background: var(--charcoal-mid); display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,0.06); }
+  .stat { padding: 2rem 2rem; border-right: 1px solid rgba(255,255,255,0.06); text-align: center; }
+  .stat:last-child { border-right: none; }
+  .stat-val { font-family: 'Libre Baskerville', serif; font-size: 2rem; font-weight: 700; color: var(--white); line-height: 1; }
+  .stat-label { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.4rem; }
+
+  /* EMPLOYER */
+  .employer { background: var(--burgundy-pale); border-top: 3px solid var(--burgundy); padding: 2.5rem 3rem; }
+  .employer-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr auto; gap: 2.5rem; align-items: center; }
+  .emp-icon { width: 3.5rem; height: 3.5rem; background: var(--burgundy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .emp-icon svg { width: 22px; height: 22px; stroke: var(--white); fill: none; stroke-width: 1.5; }
+  .emp-title { font-family: 'Libre Baskerville', serif; font-size: 1rem; font-weight: 700; color: var(--burgundy); margin-bottom: 0.35rem; }
+  .emp-desc { font-size: 0.82rem; color: var(--body); line-height: 1.7; }
+  .emp-pct { font-family: 'Libre Baskerville', serif; font-size: 3rem; font-weight: 700; color: var(--burgundy); line-height: 1; text-align: center; flex-shrink: 0; }
+  .emp-pct span { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-gray); display: block; margin-top: 0.2rem; font-family: 'Inter', sans-serif; }
+
+  /* SHARED */
+  section { padding: 6rem 3rem; }
+  .section-label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--burgundy); margin-bottom: 0.75rem; }
+  .section-heading { font-family: 'Libre Baskerville', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.2; color: var(--charcoal); }
+  .section-body { font-size: 0.9rem; color: var(--body); line-height: 1.85; margin-top: 1.25rem; }
+  .burg-rule { width: 2.5rem; height: 2px; background: var(--burgundy); margin: 1.5rem 0; }
+
+  /* ABOUT */
+  .about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .about-img-lg { grid-column: 1 / -1; aspect-ratio: 16/9; overflow: hidden; }
+  .about-img-lg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .about-img-sm { aspect-ratio: 1; overflow: hidden; }
+  .about-img-sm img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .short-term-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--burgundy-pale); border: 1px solid var(--burgundy); padding: 0.5rem 1rem; margin-top: 2rem; }
+  .short-term-pill span { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--burgundy); font-weight: 500; }
+
+  /* AMENITIES */
+  .amenities { background: var(--stone); }
+  .amenities-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .amenity-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 2rem; }
+  .amenity-col-title { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--burgundy); margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--stone-mid); }
+  .amenity-list { list-style: none; }
+  .amenity-list li { font-size: 0.85rem; color: var(--body); padding: 0.6rem 0; border-bottom: 1px solid var(--stone-mid); display: flex; align-items: center; gap: 0.6rem; }
+  .amenity-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--burgundy); flex-shrink: 0; }
+  .amenity-col:first-child { padding-right: 2rem; border-right: 1px solid var(--stone-mid); }
+  .amenity-col:last-child { padding-left: 2rem; }
+  .amenity-photos { display: flex; flex-direction: column; gap: 1rem; }
+  .amenity-photo { overflow: hidden; }
+  .amenity-photo img { width: 100%; display: block; object-fit: cover; }
+  .amenity-photo.wide { aspect-ratio: 16/9; }
+  .amenity-photo.sq { aspect-ratio: 4/3; }
+  .pet-box { background: var(--burgundy-pale); border: 1px solid var(--burgundy); padding: 1.5rem; margin-top: 2rem; }
+  .pet-box-title { font-family: 'Libre Baskerville', serif; font-size: 1rem; font-weight: 700; color: var(--burgundy); margin-bottom: 0.75rem; }
+  .pet-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .pet-lbl { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 0.25rem; }
+  .pet-val { font-size: 0.88rem; color: var(--charcoal); font-weight: 500; }
+
+  /* GALLERY */
+  .gallery { background: var(--charcoal); padding: 6rem 3rem; }
+  .gallery-heading { font-family: 'Libre Baskerville', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 700; color: var(--white); margin-bottom: 2.5rem; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 0.75rem; }
+  .g-item { overflow: hidden; }
+  .g-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .g-item:hover img { transform: scale(1.05); }
+  .g-item.wide { grid-column: span 2; }
+  .g-item.tall { grid-row: span 2; }
+
+  /* SHORT TERM BAND */
+  .stb { background: var(--charcoal-mid); padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.05); }
+  .stb-text { font-family: 'Libre Baskerville', serif; font-size: 1.2rem; font-weight: 400; color: var(--white); }
+  .stb-text em { font-style: italic; color: var(--burgundy-light); }
+  .stb-sub { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 0.35rem; }
+
+  /* CONTACT */
+  .contact { background: var(--charcoal); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+  .contact-form input, .contact-form textarea { width: 100%; background: rgba(255,255,255,0.05); border: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding: 0.9rem 0.5rem; font-size: 0.9rem; font-family: 'Inter', sans-serif; color: var(--white); outline: none; transition: border-color 0.2s; margin-bottom: 1.25rem; display: block; }
+  .contact-form input:focus, .contact-form textarea:focus { border-bottom-color: var(--burgundy-light); }
+  .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .contact-form textarea { resize: none; height: 100px; }
+  .ci-row { display: flex; gap: 1rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .ci-row:first-child { padding-top: 0; }
+  .ci-row:last-child { border-bottom: none; }
+  .ci-dot { width: 6px; height: 6px; background: var(--burgundy-light); border-radius: 50%; margin-top: 0.45rem; flex-shrink: 0; }
+  .ci-label { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--burgundy-light); margin-bottom: 0.3rem; }
+  .ci-val { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .ci-val a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+  .ci-val a:hover { color: var(--burgundy-light); }
+
+  /* FOOTER */
+  footer { background: #111; padding: 2.5rem 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+  .footer-logo img { height: 40px; opacity: 0.65; display: block; }
+  .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.67rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--burgundy-light); }
+  .footer-copy { font-size: 0.67rem; color: rgba(255,255,255,0.18); }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 1rem 1.5rem; }
+    nav.scrolled { padding: 0.8rem 1.5rem; }
+    .nav-links { display: none; }
+    .promo-bar { padding: 0.65rem 1.5rem; padding-top: 4.5rem; flex-direction: column; gap: 0.35rem; text-align: center; }
+    section { padding: 4rem 1.5rem; }
+    .gallery { padding: 4rem 1.5rem; }
+    .stb { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+    .employer { padding: 2rem 1.5rem; }
+    .employer-inner { grid-template-columns: auto 1fr; }
+    .emp-pct { display: none; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(2) { border-right: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .amenities-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 560px) {
+    .about-imgs { grid-template-columns: 1fr; }
+    .about-img-lg { grid-column: auto; }
+    .amenity-cols { grid-template-columns: 1fr; }
+    .amenity-col:first-child { padding-right: 0; border-right: none; padding-bottom: 1.5rem; border-bottom: 1px solid var(--stone-mid); }
+    .amenity-col:last-child { padding-left: 0; padding-top: 1.5rem; }
+    .pet-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .g-item.wide, .g-item.tall { grid-column: span 1; grid-row: span 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="sitenav">
+  <a href="#home" class="nav-logo">
+    <img src="logo.png" alt="Drumcastle Apartments">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#gallery">Photos</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="https://drumcastleapts.securecafe.com/residentservices/drumcastle/userlogin.aspx" target="_blank" rel="noopener" class="btn-nav btn-ghost">Resident Login</a>
+    <a href="https://drumcastleapts.securecafe.com/onlineleasing/drumcastle/oleapplication.aspx?stepname=floorplan" target="_blank" rel="noopener" class="btn-nav btn-burg">Apply Now</a>
+  </div>
+</nav>
+
+<!-- PROMO BAR -->
+<div class="promo-bar" role="note">
+  <span class="promo-text">Move in before June 30th &mdash; $250 off your next month's rent &nbsp;&middot;&nbsp; Restrictions may apply</span>
+  <a href="https://drumcastleapts.securecafe.com/onlineleasing/drumcastle/oleapplication.aspx?stepname=floorplan" target="_blank" rel="noopener" class="promo-cta">Check Availability &rarr;</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="hero.jpg" alt="Drumcastle Apartments Baltimore">
+  </div>
+  <div class="hero-bg-gradient" aria-hidden="true"></div>
+  <div class="hero-rule-top" aria-hidden="true"></div>
+  <p class="hero-eyebrow">Baltimore, Maryland &nbsp;&middot;&nbsp; 21212</p>
+  <h1 class="hero-name">Drum<span class="dot">&middot;</span>Castle</h1>
+  <p class="hero-sub-name">Apartments in Baltimore</p>
+  <div class="hero-rule-h" aria-hidden="true"></div>
+  <p class="hero-desc">Spacious 2-bedroom apartment homes with flowing layouts, modern appliances, and large closets &mdash; in a tranquil community tucked within one of Baltimore's most connected neighborhoods.</p>
+  <div class="hero-ctas">
+    <a href="https://drumcastleapts.securecafe.com/onlineleasing/drumcastle/oleapplication.aspx?stepname=floorplan" target="_blank" rel="noopener" class="btn-primary">Check Availability</a>
+    <a href="#contact" class="btn-outline-lt">Schedule a Tour</a>
+    <a href="https://www.youtube.com/watch?v=b6JcX0YdtyI" target="_blank" rel="noopener" class="btn-outline-lt">Virtual Tour &nearr;</a>
+  </div>
+  <div class="hero-rule-bot" aria-hidden="true"></div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-val">2 BR</div><div class="stat-label">All Floor Plans</div></div>
+  <div class="stat"><div class="stat-val">6 &amp; 9</div><div class="stat-label">Month Leases</div></div>
+  <div class="stat"><div class="stat-val">5%</div><div class="stat-label">Employer Discount</div></div>
+  <div class="stat"><div class="stat-val">$250</div><div class="stat-label">Move-In Special</div></div>
+</div>
+
+<!-- EMPLOYER PROGRAM -->
+<div class="employer">
+  <div class="employer-inner">
+    <div class="emp-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </div>
+    <div>
+      <div class="emp-title">Preferred Employer Program</div>
+      <div class="emp-desc">Medical professionals, police, firefighters, government employees, teachers, and military personnel are eligible for a <strong>5% concession off market rent</strong> at communities managed by Signature Properties. Terms and conditions apply.</div>
+    </div>
+    <div class="emp-pct">5%<span>Off Market Rent</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-imgs">
+      <div class="about-img-lg">
+        <img src="exterior-1.jpg" alt="Drumcastle Apartments exterior">
+      </div>
+      <div class="about-img-sm">
+        <img src="about-1.jpg" alt="Drumcastle bedroom">
+      </div>
+      <div class="about-img-sm">
+        <img src="about-3.jpg" alt="Drumcastle kitchen">
+      </div>
+    </div>
+    <div>
+      <p class="section-label">About Drumcastle</p>
+      <h2 class="section-heading">Suburban tranquility in the heart of Baltimore</h2>
+      <div class="burg-rule"></div>
+      <p class="section-body">Within the bustling city of Baltimore, you'll find the tranquil suburban lifestyle of Drumcastle Apartments. Our pet-friendly community offers spacious 2-bedroom homes with flowing layouts, modern appliances, and large closets.</p>
+      <p class="section-body" style="margin-top: 1rem;">Located conveniently near shopping, dining, transportation, and job opportunities, Drumcastle puts everything you need within reach &mdash; with the peace and quiet you've been looking for.</p>
+      <div class="short-term-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--burgundy);" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Short-term leases available &mdash; 6 &amp; 9 months. Call for pricing.</span>
+      </div>
+      <a href="#contact" class="btn-primary" style="margin-top: 2.5rem;">Schedule a Tour</a>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amenities" id="amenities">
+  <div class="amenities-grid">
+    <div>
+      <p class="section-label">What's Included</p>
+      <h2 class="section-heading">Community &amp; Apartment Amenities</h2>
+      <div class="burg-rule"></div>
+      <div class="amenity-cols">
+        <div class="amenity-col">
+          <div class="amenity-col-title">Community</div>
+          <ul class="amenity-list">
+            <li>Fitness Center</li>
+            <li>Dog Park</li>
+            <li>Playground</li>
+            <li>Business Center</li>
+            <li>Laundry Facilities</li>
+            <li>Off-Street Parking</li>
+            <li>On-Site Maintenance</li>
+            <li>On-Site Management</li>
+            <li>Short-Term Leases</li>
+            <li>24-Hour Availability</li>
+          </ul>
+        </div>
+        <div class="amenity-col">
+          <div class="amenity-col-title">Apartment</div>
+          <ul class="amenity-list">
+            <li>Large Closets</li>
+            <li>Air Conditioning</li>
+            <li>Washer/Dryer*</li>
+            <li>Efficient Appliances</li>
+            <li>Dishwasher</li>
+            <li>Garbage Disposal</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pet-box">
+        <div class="pet-box-title">Pet-Friendly Community</div>
+        <div class="pet-grid">
+          <div><div class="pet-lbl">Pets Allowed</div><div class="pet-val">Cats &amp; Dogs</div></div>
+          <div><div class="pet-lbl">Deposit</div><div class="pet-val">$300.00</div></div>
+          <div><div class="pet-lbl">Monthly Rent</div><div class="pet-val">$40 / pet</div></div>
+        </div>
+        <p style="font-size:0.72rem;color:var(--warm-gray);margin-top:0.85rem;">Max 2 pets per household. Breed restrictions apply.</p>
+      </div>
+    </div>
+    <div class="amenity-photos">
+      <div class="amenity-photo wide">
+        <img src="amenity-1.jpg" alt="Drumcastle fitness center">
+      </div>
+      <div class="amenity-photo sq">
+        <img src="amenity-2.jpg" alt="Drumcastle business center">
+      </div>
+      <div class="amenity-photo sq">
+        <img src="exterior-2.jpg" alt="Drumcastle community exterior">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <p class="section-label" style="color:var(--burgundy-light);">Photo Gallery</p>
+  <h2 class="gallery-heading">See the Community</h2>
+  <div class="gallery-grid">
+    <div class="g-item wide tall"><img src="gallery-4.jpg" alt="Drumcastle living room"></div>
+    <div class="g-item"><img src="gallery-1.jpg" alt="Drumcastle bedroom"></div>
+    <div class="g-item"><img src="gallery-6.jpg" alt="Drumcastle kitchen"></div>
+    <div class="g-item wide"><img src="gallery-9.jpg" alt="Drumcastle living space"></div>
+    <div class="g-item"><img src="gallery-2.jpg" alt="Drumcastle bedroom 2"></div>
+    <div class="g-item"><img src="gallery-7.jpg" alt="Drumcastle kitchen 2"></div>
+    <div class="g-item wide"><img src="gallery-5.jpg" alt="Drumcastle bedroom 3"></div>
+    <div class="g-item"><img src="gallery-8.jpg" alt="Drumcastle open kitchen"></div>
+    <div class="g-item"><img src="gallery-11.jpg" alt="Drumcastle open bedroom"></div>
+    <div class="g-item wide"><img src="gallery-10.jpg" alt="Drumcastle hallway"></div>
+    <div class="g-item"><img src="gallery-3.jpg" alt="Drumcastle bedroom 4"></div>
+    <div class="g-item"><img src="gallery-12.jpg" alt="Drumcastle washer dryer"></div>
+  </div>
+</section>
+
+<!-- SHORT TERM BAND -->
+<div class="stb">
+  <div>
+    <div class="stb-text">Short-term leases available &mdash; <em>6 and 9 month options.</em></div>
+    <div class="stb-sub">Flexible lease terms for those who need them. Call us for current pricing and availability.</div>
+  </div>
+  <a href="tel:+14433055742" class="btn-primary" style="white-space:nowrap;">(443) 305-5742</a>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div>
+      <p class="section-label" style="color:var(--burgundy-light);">Get in Touch</p>
+      <h2 class="section-heading" style="color:var(--white);">Schedule a Tour or Ask a Question</h2>
+      <div class="burg-rule" style="background:var(--burgundy-light);"></div>
+      <div style="margin-top:2rem;">
+        <div class="ci-row"><div class="ci-dot"></div><div><div class="ci-label">Address</div><div class="ci-val">6306 Holly Ln<br>Baltimore, MD 21212</div></div></div>
+        <div class="ci-row"><div class="ci-dot"></div><div><div class="ci-label">Phone</div><div class="ci-val"><a href="tel:+14433055742">(443) 305-5742</a></div></div></div>
+        <div class="ci-row"><div class="ci-dot"></div><div><div class="ci-label">Email</div><div class="ci-val"><a href="https://signatureprops.net/properties/drumcastle-apartments/contact-us" target="_blank" rel="noopener">Contact Us Online &rarr;</a></div></div></div>
+        <div class="ci-row"><div class="ci-dot"></div><div><div class="ci-label">Tours</div><div class="ci-val">Now scheduling in-person tours by appointment &mdash; <a href="https://signatureprops.net/properties/drumcastle-apartments/schedule-a-tour" target="_blank" rel="noopener">Book online &rarr;</a></div></div></div>
+      </div>
+    </div>
+    <div>
+      <!-- KNOCK WIDGET: replace this form with your Knock embed snippet -->
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <input type="text" name="first_name" placeholder="First Name" required>
+        <input type="text" name="last_name" placeholder="Last Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <input type="text" name="subject" placeholder="Subject">
+        <textarea name="message" placeholder="Your message..."></textarea>
+        <button type="submit" class="btn-primary" style="width:100%;">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#home" class="footer-logo">
+    <img src="logo.png" alt="Drumcastle Apartments">
+  </a>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#gallery">Photos</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://signatureprops.net" target="_blank" rel="noopener">Signature Properties &nearr;</a></li>
+  </ul>
+  <div class="footer-copy">&copy; 2026 Signature Properties</div>
+</footer>
+
+<script>
+  const nav = document.getElementById('sitenav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const original = btn.textContent;
+    btn.textContent = 'Sent \u2713';
+    btn.style.opacity = '0.7';
+    setTimeout(() => { btn.textContent = original; btn.style.opacity = ''; e.target.reset(); }, 3000);
+  }
+</script>
+</body>
+</html>
